@@ -2,6 +2,7 @@ import React from 'react';
 import { logEvent } from '../../services/log/logService';
 import { useTranslation } from 'react-i18next';
 import env from '../../../env';
+import MyChart from '../../../components/dashboard/charts/BarChart';
 
 function HomePage() {
     const { t, i18n } = useTranslation();
@@ -19,6 +20,8 @@ function HomePage() {
             <button onClick={() => i18n.changeLanguage('fr')}>FR</button>
             <button onClick={() => i18n.changeLanguage('en')}>EN</button>
             <p>{t('logout')}</p>
+
+            <MyChart/>
         </div>
     );
 }

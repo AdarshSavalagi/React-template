@@ -3,9 +3,11 @@ import { logEvent } from '../../services/log/logService';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema } from '../../forms/schemas/loginSchema';
+import { useDispatch } from 'react-redux';
+import { login } from '../../store/authSlice';
 
 export default function LoginPage() {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const {
         register,
@@ -18,15 +20,15 @@ export default function LoginPage() {
     const handleLogin = async (data) => {
         logEvent('INFO', 'user clicked login button');
         console.log(data);
-        // dispatch(
-        //     login({
-        //         user: {
-        //             name: 'Adarsh',
-        //             email: 'adarsh@gmail.com',
-        //             token: 'tijenajdfas',
-        //         },
-        //     })
-        // );
+        dispatch(
+            login({
+                user: {
+                    name: 'Adarsh',
+                    email: 'adarsh@gmail.com',
+                    token: 'tijenajdfas',
+                },
+            })
+        );
     };
     return (
         <div>
