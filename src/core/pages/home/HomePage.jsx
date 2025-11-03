@@ -21,7 +21,7 @@ function HomePage() {
             <button onClick={() => i18n.changeLanguage('en')}>EN</button>
             <p>{t('logout')}</p>
 
-            <MyChart/>
+            <MyChart />
         </div>
     );
 }

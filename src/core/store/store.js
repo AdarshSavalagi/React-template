@@ -27,8 +27,7 @@ export const store = configureStore({
             serializableCheck: {
                 ignoredActions: [PERSIST],
             },
-        }),
-    // .concat(loggerMiddleware),
+        })
 });
 
 export const persister = persistStore(store);
